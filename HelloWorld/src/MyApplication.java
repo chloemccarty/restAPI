@@ -17,7 +17,7 @@ public class MyApplication extends Application{
         HashSet h = new HashSet<Class<?>>();
         //h.add( HelloWorld.class );
         h.add(UserResource.class);
-       // h.add(TopicResource.class);
+        h.add(TopicResource.class);
         h.add(PostResource.class);
         return h;
     }

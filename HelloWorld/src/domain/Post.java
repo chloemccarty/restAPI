@@ -17,20 +17,28 @@ public class Post extends DataModel {
     private Replies replies;
     private String url;
 
+    // TODO remove after done testing
+    public Post(String author, int authorId, String body, Topic topic) {
+        this.author = author;
+        this.authorId = authorId;
+        this.body = body;
+        this.topic = topic;
+    }
+
     @Override
     public String toJson() {
         Type postType = (new TypeToken<Post>() {}).getType();
         return (new Gson()).toJson(this, postType);
     }
 
+    // TODO every datamodel setId method should also set the URL
     public int getId() {
         return id;
     }
     public void setId(int id) {
         this.id = id;
+        this.url = rootURI + "/posts/" + id;
     }
-
-    // TODO: should i have an authorID instead of author string?
 
     public String getAuthor() {
         return author;

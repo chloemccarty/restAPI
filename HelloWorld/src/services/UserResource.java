@@ -114,4 +114,8 @@ public class UserResource {
         Gson gson = new Gson();
         return gson.toJson(urls);
     }
+
+    public static User getUserRef(int id) {
+        return userDB.get(id);
+    }
 }

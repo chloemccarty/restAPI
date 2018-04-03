@@ -42,6 +42,7 @@ public class User extends DataModel {
     }
     public void setId(int id) {
         this.id = id;
+        this.url = rootURI + "/users/" + id;
     }
 
     public String getUsername() {
@@ -61,8 +62,8 @@ public class User extends DataModel {
     public int getNumPosts() {
         return numPosts;
     }
-    public void setNumPosts(int numPosts) {
-        this.numPosts = numPosts;
+    public void incrNumPosts() {
+        this.numPosts++;
     }
 
     public boolean isAdmin() {
